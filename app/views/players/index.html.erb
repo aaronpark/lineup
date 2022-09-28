@@ -1,0 +1,17 @@
+
+
+<table class="table">
+<tr>
+  <th>Name</th>
+  <th>Commitment</th>
+  <th>Position</th>
+</tr>
+  <% @players.each do |p| %>
+  <tr>
+    <td class="table-<%= p.male? ? 'primary' : 'danger' %>"><%= p.name %></td>
+    <td><%= p.commitment.upcase %></td>
+    <td><%= p.position.upcase[0] %></td>
+  </tr>
+  <% end %>
+</table>
+

@@ -1,0 +1,54 @@
+<center>
+<table class="table table-sm table-borderless text-center" style="width:300px;">
+	<tr>
+		<td colspan="3">
+			<h3><%= @game.play_at.in_time_zone('Pacific Time (US & Canada)').strftime('%b %-d @ %-I:%M %p') %></h3>
+		</td>
+	</tr>
+	<tr class="table-secondary">
+		<th>Winger</th>
+		<th>Center</th>
+		<th>Winger</th>
+	</tr>
+	<tr>
+		<td><%= player(@game.mw1)&.name %></td>
+		<td><%= player(@game.c1)&.name %></td>
+		<td><%= player(@game.fw1)&.name %></td>
+	</tr>
+	<tr>
+		<td><%= player(@game.mw2)&.name %></td>
+		<td><%= player(@game.c2)&.name %></td>
+		<td><%= player(@game.fw2)&.name %></td>
+	</tr>
+	<tr>
+		<td><%= player(@game.mw3)&.name %></td>
+		<td><%= player(@game.c3)&.name %></td>
+		<td><%= player(@game.fw3)&.name %></td>
+	</tr>
+	<tr class="table-secondary">
+		<th>Defence</th>
+		<th></th>
+		<th>Defence</th>
+	</tr>
+	<tr>
+		<td><%= player(@game.md1)&.name %></td>
+		<td></td>
+		<td><%= player(@game.fd1)&.name %></td>
+	</tr>
+	<tr>
+		<td><%= player(@game.md2)&.name %></td>
+		<td></td>
+		<td><%= player(@game.fd2)&.name %></td>
+	</tr>
+	<tr class="table-secondary">
+		<th></th>
+		<th>Goalie</th>
+		<th></th>
+	</tr>
+	<tr>
+		<td colspan="3">
+			Mike D
+		</td>
+	</tr>
+</table>
+</center>

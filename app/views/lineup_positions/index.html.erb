@@ -1,0 +1,47 @@
+<h3>Games</h3>
+
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>Player</th>
+		<th>Position</th>
+		<th>Line</th>
+	</tr>
+  <% @lineup_positions.each_with_index do |lp, i| %>
+  <tr>
+		<td><%= lp.id %></td>
+    <td class="table-<%= lp.player.male? ? 'primary' : 'danger' %>"><%= lp.player.name %></td>
+    <td><%= lp.position.upcase[0] %></td>
+    <td><%= lp.line %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<table class="table">
+	<tr>
+		<th>Winger</th>
+		<th>Center</th>
+		<th>Winger</th>
+	</tr>
+	<tr>
+		<td><%= @lineup_positions.find_by(line: 1, position: 'winger', player: { sex: 'male' })&.player&.name %></td>
+		<td><%= @lineup_positions.find_by(line: 1, position: 'centre').player.name %></td>
+		<td><%= @lineup_positions.find_by(line: 1, position: 'winger', player: { sex: 'female' })&.player&.name %></td>
+	</tr>
+  <tr>
+	  <% @line_1_forwards.each do |f| %>
+  	  <td class="table-<%= f.player.male? ? 'primary' : 'danger' %>"><%= f.player.name %></td>
+	  <% end %>
+	</tr>
+	<tr>
+		<% @line_2_forwards.each do |f| %>
+  	  <td class="table-<%= f.player.male? ? 'primary' : 'danger' %>"><%= f.player.name %></td>
+	  <% end %>
+	</tr>
+	<tr>
+		<% @line_3_forwards.each do |f| %>
+  	  <td class="table-<%= f.player.male? ? 'primary' : 'danger' %>"><%= f.player.name %></td>
+	  <% end %>
+  </tr>
+</table>
